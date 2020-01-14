@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>users</title>
@@ -95,18 +95,14 @@
                                                 <dd><input type="text" placeholder="Password" name="password"></dd>
                                             </dl>
                                             <dl>
-                                                <select name="rolesNewUser" multiple required placeholder="Role">
-                                                    <option disabled>Choose role</option>
-                                                    <div th:each="role : ${roles}">
-                                                        <option th:value="${role.id}" th:text="${role.role}"/>
-                                                    </div>
-                                                </select>
+                                                <select id="roleListHtml" name="rolesNewUser" multiple required placeholder="Role"></select>
                                             </dl>
                                         </div>
                                         </select>
                                         </dl>
                                         <dl>
-                                            <button type="button" id="addButton" class="btn btn-success" formaction="/admin"
+                                            <button type="button" id="addButton" class="btn btn-success"
+                                                    formaction="/admin"
                                                     formmethod="get">Add new user
                                             </button>
                                         </dl>
@@ -127,8 +123,8 @@
     </div>
 </div>
 
-<script src="css/style.css"></script>
-<script src="css/bootstrap-grid.css"></script>
+<!--<script src="css/style.css"></script>-->
+<!--<script src="css/bootstrap-grid.css"></script>-->
 <!-- Подключаем jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!-- Подключаем Bootstrap JS -->

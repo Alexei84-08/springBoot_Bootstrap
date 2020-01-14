@@ -11,7 +11,7 @@ function getAllRoles() {
     $.ajax({url: "http://localhost:8080/api/roles/"}).then(function (roleList) {
         var roleListHtml = document.getElementById('roleListHtml');
         for (var i = roleList.length - 1; i >= 0; i--) {
-            addUserPage(roleListHtml, roleList[i]);
+            addRolesPage(roleListHtml, roleList[i]);
         }
     });
 }
@@ -20,6 +20,14 @@ $(document).ready(function () {
     getAllUsers();
     getAllRoles();
 });
+
+function addRolesPage(roleListHtml, roles) {
+    roleListHtml.insertAdjacentHTML('afterBegin', strAddRoles(roles));
+}
+
+function strAddRoles(role) {
+    return "<option id='roleListHtml'" + role.id + ">" + role.role + "</option";
+}
 
 function addUserPage(userListHtml, user) {
     userListHtml.insertAdjacentHTML('afterBegin', strAddUser(user));
